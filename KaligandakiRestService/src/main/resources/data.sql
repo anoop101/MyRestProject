@@ -22,11 +22,11 @@ VALUES (4,"Switch","2Way", "Quantity", "Added today",  "Anoop");
 
 
 
-INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_NAME, PRODUCT_CATEGORY, COMPANY, COMMENT, UPDATED_BY)
-VALUES (1,"Rathi 2Way Switch", 4, 1, "Added today",  "Anoop");
+INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_NAME, PRICE, PRODUCT_CATEGORY, COMPANY, COMMENT, UPDATED_BY)
+VALUES (1,"Rathi 2Way Switch", 20.00, 4, 1, "Added today",  "Anoop");
 
 INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_NAME, PRODUCT_CATEGORY, COMPANY, COMMENT, UPDATED_BY)
-VALUES (2,"CPL 2Way Switch", 4, 3, "Added today",  "Anoop");
+VALUES (2,"CPL 2Way Switch", 50.00, 4, 3, "Added today",  "Anoop");
 
 INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_NAME, PRODUCT_CATEGORY, COMPANY, COMMENT, UPDATED_BY)
-VALUES (3,"Telephone cable - Prakash", 2, 2, "Added today",  "Anoop");
+VALUES (3,"Telephone cable - Prakash", 33.00, 2, 2, "Added today",  "Anoop");

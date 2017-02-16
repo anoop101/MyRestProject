@@ -22,6 +22,9 @@ public class Product {
 	@Column(name = "PRODUCT_NAME")
 	private String productName;
 
+	@Column(name="PRICE")
+	private double price;
+	
 	@ManyToOne(optional = false, cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "PRODUCT_CATEGORY")
 	private ProductCategory category;
