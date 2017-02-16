@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings version="1.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+
+
+	<jxb:bindings schemaLocation="Product.xsd">
+		<jxb:globalBindings>
+			<jxb:javaType name="org.joda.time.LocalDate" xmlType="xs:date"
+				parseMethod="com.kaligandaki.utils.DateConverter.parse" printMethod="com.kaligandaki.utils.DateConverter.print" />
+		</jxb:globalBindings>
+	</jxb:bindings>
+
+</jxb:bindings>
