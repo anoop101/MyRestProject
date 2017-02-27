@@ -1,27 +1,37 @@
 package com.kaligandaki.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.cache.annotation.Cacheable;
 
-import com.kaligandaki.dto.Product;
+import com.kaligandaki.dto.ProductDTO;
 
-@Repository
 public class ProductDAO {
 
-	@Autowired
 	private SessionFactory sessionFactory;
-	
-	public List<Product> getProductList(){
-		Session session = sessionFactory.openSession();
-		 Query query = session.createQuery("from Product");
-		 
-		 List<Product> prodList = query.getResultList();
-		 return prodList;
+
+	@Cacheable(value="productsCache")
+	public List<ProductDTO> getProductList(int start, int count) {
+		List<ProductDTO> prodList = new ArrayList<>();
+		try {
+			Session session = sessionFactory.getCurrentSession();
+
+			Query query = session.createQuery("from ProductDTO");
+			if(start != 0)
+				query.setFirstResult(start);
+			if(count != 0)	
+				query.setMaxResults(count);
+			
+			prodList = query.getResultList();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return prodList;
 	}
 
 	public SessionFactory getSessionFactory() {

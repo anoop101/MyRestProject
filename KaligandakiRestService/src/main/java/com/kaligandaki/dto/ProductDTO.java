@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class ProductDTO {
 	@Id
 	@Column(name = "PRODUCT_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,16 +22,16 @@ public class Product {
 	@Column(name = "PRODUCT_NAME")
 	private String productName;
 
-	@Column(name="PRICE")
+	@Column(name = "PRICE")
 	private double price;
-	
-	@ManyToOne(optional = false, cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	@JoinColumn(name = "PRODUCT_CATEGORY")
-	private ProductCategory category;
 
-	@ManyToOne(optional = false, cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "PRODUCT_CATEGORY")
+	private ProductCategoryDTO category;
+
+	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "COMPANY")
-	private MFDCompany mfdCompany;
+	private MFDCompanyDTO mfdCompany;
 
 	@Column(name = "COMMENT")
 	private String comment;
@@ -55,19 +55,19 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public ProductCategory getCategory() {
+	public ProductCategoryDTO getCategory() {
 		return category;
 	}
 
-	public void setCategory(ProductCategory category) {
+	public void setCategory(ProductCategoryDTO category) {
 		this.category = category;
 	}
 
-	public MFDCompany getMfdCompany() {
+	public MFDCompanyDTO getMfdCompany() {
 		return mfdCompany;
 	}
 
-	public void setMfdCompany(MFDCompany mfdCompany) {
+	public void setMfdCompany(MFDCompanyDTO mfdCompany) {
 		this.mfdCompany = mfdCompany;
 	}
 
@@ -87,10 +87,12 @@ public class Product {
 		this.updatedBy = updatedBy;
 	}
 
-	@Override
-	public String toString() {
-		return "Product [productId=" + productId + ", productName=" + productName + ", category=" + category.getProductCategoryId()
-				+ ", mfdCompany=" + mfdCompany.getCompanyId() + ", comment=" + comment + ", updatedBy=" + updatedBy + "]";
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 }

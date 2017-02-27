@@ -1,4 +1,4 @@
-package com.kaligandaki.rest;
+package com.kaligandaki.config;
 
 import java.util.List;
 

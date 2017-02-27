@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "mfd_company")
-public class MFDCompany {
+public class MFDCompanyDTO {
 
 	@Id
 	@Column(name = "COMPANY_ID")

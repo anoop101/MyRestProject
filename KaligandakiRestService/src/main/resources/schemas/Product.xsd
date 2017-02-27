@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	targetNamespace="http://www.kaligandaki.com/valueobjects" xmlns:tns="http://www.kaligandaki.com/valueobjects"
+	targetNamespace="http://www.kaligandaki.com/vo" xmlns:tns="http://www.kaligandaki.com/vo"
 	elementFormDefault="qualified">
 
 	<xs:element name="product">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="productId" type="xs:int" />
-				<xs:element name="productName" type="xs:string" />
-				<xs:element name="productCategory" type="xs:string" />
+				<xs:element minOccurs="0" name="productName" type="xs:string" />
+				<xs:element minOccurs="0" name="productCategory" type="xs:string" />
+				<xs:element minOccurs="0" name="productSubCategory" type="xs:string" />
+				<xs:element minOccurs="0" name="price" type="xs:double" />
+				<xs:element minOccurs="0" name="measurement" type="xs:string" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

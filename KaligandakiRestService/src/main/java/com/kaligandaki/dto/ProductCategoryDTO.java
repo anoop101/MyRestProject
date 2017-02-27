@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product_category")
-public class ProductCategory {
+public class ProductCategoryDTO {
 	@Id
 	@Column(name = "PRODUCT_CATEGORY_ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
