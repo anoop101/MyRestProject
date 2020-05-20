@@ -23,7 +23,7 @@ public class KaligandakiRestWebXML implements WebApplicationInitializer {
 		myServlet.setLoadOnStartup(1);
 	}
 	
-	
+	//hey this is also trisl yest
 	/**
 	 * Registering ContextLoaderListener
 	 * @return
