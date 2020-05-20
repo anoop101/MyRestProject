@@ -27,9 +27,7 @@ public class ProductService {
 			prod.setProductId(prodDTO.getProductId());
 			prod.setProductName(prodDTO.getProductName());
 			prod.setPrice(prodDTO.getPrice());
-			prod.setMeasurement(prodDTO.getCategory().getMeasurement());
 			prod.setProductCategory(prodDTO.getCategory().getProductCategory());
-			prod.setProductSubCategory(prodDTO.getCategory().getProductSubCategory());
 			productVOList.add(prod);
 		}
 		return productVOList;
